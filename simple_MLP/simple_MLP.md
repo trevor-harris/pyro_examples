@@ -52,9 +52,9 @@ y = wn2d(n, mu = mu, pts = p)
 fig, ax = plt.subplots(1, 2, figsize = (8, 4))
 
 ax[0].imshow(x[0,...], origin = 'bottom', cmap = 'RdBu_r')
-ax[0].set_title('X - instance', fontsize = 24, color = 'white')
+ax[0].set_title('X - example', fontsize = 24)
 ax[1].imshow(y[0,...], origin = 'bottom', cmap = 'RdBu_r')
-ax[1].set_title('Y - instance', fontsize = 24, color = 'white')
+ax[1].set_title('Y - example', fontsize = 24)
 plt.show()
 ```
 
@@ -146,13 +146,13 @@ for j in range(epochs):
 print("[iteration %04d] loss: %.6f" % (j+1, loss))
 ```
 
-    [iteration 0000] loss: 0.352520
-    [iteration 0050] loss: 0.000930
-    [iteration 0100] loss: 0.000055
-    [iteration 0150] loss: 0.000017
-    [iteration 0200] loss: 0.000005
-    [iteration 0250] loss: 0.000001
-    [iteration 0300] loss: 0.000000
+    [iteration 0000] loss: 0.535031
+    [iteration 0050] loss: 0.000730
+    [iteration 0100] loss: 0.000069
+    [iteration 0150] loss: 0.000021
+    [iteration 0200] loss: 0.000007
+    [iteration 0250] loss: 0.000002
+    [iteration 0300] loss: 0.000001
     [iteration 0350] loss: 0.000000
     [iteration 0400] loss: 0.000000
     [iteration 0450] loss: 0.000000
@@ -184,9 +184,9 @@ label = label.cpu().detach().numpy()
 # lo and behold it worked. First 100 are 0 (X's label). Second 100 are 1 (Y's label)
 fig, ax = plt.subplots(1, 2, figsize = (12, 4))
 ax[0].plot(label)
-ax[0].set_title('True labels', fontsize = 24, color = 'white')
+ax[0].set_title('True labels', fontsize = 24)
 ax[1].plot(label_hat)
-ax[1].set_title('Predicted labels', fontsize = 24, color = 'white')
+ax[1].set_title('Predicted labels', fontsize = 24)
 plt.show()
 ```
 

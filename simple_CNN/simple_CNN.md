@@ -52,9 +52,9 @@ y = wn2d(n, mu = mu, pts = p)
 fig, ax = plt.subplots(1, 2, figsize = (8, 4))
 
 ax[0].imshow(x[0,...], origin = 'bottom', cmap = 'RdBu_r')
-ax[0].set_title('X - instance', fontsize = 24, color = 'white')
+ax[0].set_title('X - example', fontsize = 24)
 ax[1].imshow(y[0,...], origin = 'bottom', cmap = 'RdBu_r')
-ax[1].set_title('Y - instance', fontsize = 24, color = 'white')
+ax[1].set_title('Y - example', fontsize = 24)
 plt.show()
 ```
 
@@ -131,7 +131,7 @@ criterion = nn.MSELoss()
 
 
 ```python
-epochs = 1000
+epochs = 2000
 for j in range(epochs):
     # reset loss value at the beginning of each training epoch
     loss = 0
@@ -158,27 +158,27 @@ for j in range(epochs):
 print("[iteration %04d] loss: %.6f" % (j+1, loss))
 ```
 
-    [iteration 0000] loss: 0.287239
-    [iteration 0050] loss: 0.002429
-    [iteration 0100] loss: 0.001298
-    [iteration 0150] loss: 0.000803
-    [iteration 0200] loss: 0.000490
-    [iteration 0250] loss: 0.000297
-    [iteration 0300] loss: 0.000180
-    [iteration 0350] loss: 0.000108
-    [iteration 0400] loss: 0.000063
-    [iteration 0450] loss: 0.000037
-    [iteration 0500] loss: 0.000021
-    [iteration 0550] loss: 0.000012
-    [iteration 0600] loss: 0.000007
-    [iteration 0650] loss: 0.000004
-    [iteration 0700] loss: 0.000002
-    [iteration 0750] loss: 0.000001
-    [iteration 0800] loss: 0.000000
-    [iteration 0850] loss: 0.000000
-    [iteration 0900] loss: 0.000000
-    [iteration 0950] loss: 0.000000
-    [iteration 1000] loss: 0.000000
+    [iteration 0000] loss: 0.894185
+    [iteration 0100] loss: 0.001045
+    [iteration 0200] loss: 0.000463
+    [iteration 0300] loss: 0.000204
+    [iteration 0400] loss: 0.000093
+    [iteration 0500] loss: 0.000043
+    [iteration 0600] loss: 0.000020
+    [iteration 0700] loss: 0.000009
+    [iteration 0800] loss: 0.000004
+    [iteration 0900] loss: 0.000002
+    [iteration 1000] loss: 0.000001
+    [iteration 1100] loss: 0.000000
+    [iteration 1200] loss: 0.000000
+    [iteration 1300] loss: 0.000000
+    [iteration 1400] loss: 0.000000
+    [iteration 1500] loss: 0.000000
+    [iteration 1600] loss: 0.000000
+    [iteration 1700] loss: 0.000000
+    [iteration 1800] loss: 0.000000
+    [iteration 1900] loss: 0.000000
+    [iteration 2000] loss: 0.000000
 
 
 
@@ -193,12 +193,12 @@ label = label.cpu().detach().numpy()
 
 
 ```python
-# lo and behold it worked. First 100 are 0 (X's label). Second 100 are 1 (Y's label)
+# lo and behold it worked. First 100 are ~0 (X's label). Second 100 are ~1 (Y's label)
 fig, ax = plt.subplots(1, 2, figsize = (12, 4))
 ax[0].plot(label)
-ax[0].set_title('True labels', fontsize = 24, color = 'white')
+ax[0].set_title('True labels', fontsize = 24)
 ax[1].plot(label_hat)
-ax[1].set_title('Predicted labels', fontsize = 24, color = 'white')
+ax[1].set_title('Predicted labels', fontsize = 24)
 plt.show()
 ```
 
