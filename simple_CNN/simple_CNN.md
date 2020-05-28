@@ -1,3 +1,7 @@
+## Intro
+
+We will build a simple convolutional neural network (CNN) to classify two Gaussian processes X vs Y.
+
 ```python
 # numpy always
 import numpy as np
